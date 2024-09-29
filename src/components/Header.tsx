@@ -8,7 +8,6 @@ import { NavLink } from 'react-router-dom';
 const Header: React.FC = () => {
     return <>
     <header>
-
         <div className="d-flex justify-content-between align-items-center bg-white">
             <div className="d-flex justify-content-center flex-grow-1">
                 <ul>

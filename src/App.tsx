@@ -1,8 +1,9 @@
-import { BrowserRouter, Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './styles/app.css';
 import Home from './pages/Home'
 import Chart from './pages/Chart';
+import FAQ from './pages/FAQ';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
           <Route path='/home' element={<Home />}/>
           <Route index element={<Chart />}/>
           <Route path='/chart' element={<Chart />}/>
+          <Route index element={<FAQ />}/>
+          <Route path='/faq' element={<FAQ />}/>
         </Routes>
     </BrowserRouter>
 	</>

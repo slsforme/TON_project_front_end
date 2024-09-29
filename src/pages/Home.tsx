@@ -9,6 +9,7 @@ import Header from "../components/Header"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import { NavLink } from "react-router-dom"
+import Footer from "../components/Footer"
 
 
 
@@ -76,6 +77,7 @@ const Home: React.FC = () => {
     </div>
 
 </main>
+<Footer/>
     </>
 }
 

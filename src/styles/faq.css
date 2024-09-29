@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+h1{
+    font-family: "PT Serif", serif;
+    font-size: xxx-large;
+}
+
+li p{
+    font-size: larger;
+    font-family: "Space Mono", system-ui;
+    margin-top: 1%;
+}
+
+li h2{
+    font-family: "PT Serif", serif;
+    margin-top: 3%;
+}
+
