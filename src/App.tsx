@@ -4,6 +4,7 @@ import './styles/app.css';
 import Home from './pages/Home'
 import Chart from './pages/Chart';
 import FAQ from './pages/FAQ';
+import Market from './pages/Market';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
           <Route path='/chart' element={<Chart />}/>
           <Route index element={<FAQ />}/>
           <Route path='/faq' element={<FAQ />}/>
+          <Route index element={<Market />}/>
+          <Route path='/market' element={<Market />}/>
         </Routes>
     </BrowserRouter>
 	</>

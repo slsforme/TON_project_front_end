@@ -10,53 +10,36 @@ const Footer: React.FC = () => {
                 <div className="row">
                 <div className="col-md-6 ">
                     <div className="logo-part">
-                        <p>7637 Laurel Dr. King Of Prussia, PA 19406</p>
-                        <p>Use this tool as test data for an automated system or find your next pen</p>
+                        <p>г. Москва. 2024 год.</p>
+                        <p><a href="https://github.com/slsforme">Github</a> <a href="https://t.me/slsforme">Telegram</a></p>
                     </div>
                 </div>
                 <div className="col-md-6 px-4">
-                    <h6> About Company</h6>
-                    <p>But horizontal lines can only be a full pixel high.</p>
-                    <a href="#" className="btn-footer"> More Info </a>
-                    <a href="#" className="btn-footer"> Contact Us</a>
+                    <h6> О нас</h6>
+                    <p> Лучшие на рынке продажи NFT.</p>
+                    <a href="#" className="btn-footer"> More info </a>
                 </div>
                 </div>
             </div>
             <div className="col-md-6">
                 <div className="row">
                 <div className="col-md-6 px-4">
-                    <h6> Help us</h6>
+                    <h6> Меню</h6>
                     <div className="row ">
                         <div className="col-md-6">
                             <ul>
-                            <li> <a href="#"> Home</a> </li>
-                            <li> <a href="#"> About</a> </li>
-                            <li> <a href="#"> Service</a> </li>
-                            <li> <a href="#"> Team</a> </li>
-                            <li> <a href="#"> Help</a> </li>
-                            <li> <a href="#"> Contact</a> </li>
-                            </ul>
-                        </div>
-                        <div className="col-md-6 px-4">
-                            <ul>
-                            <li> <a href="#"> Cab Faciliy</a> </li>
-                            <li> <a href="#"> Fax</a> </li>
-                            <li> <a href="#"> Terms</a> </li>
-                            <li> <a href="#"> Policy</a> </li>
-                            <li> <a href="#"> Refunds</a> </li>
-                            <li> <a href="#"> Paypal</a> </li>
+                            <li> <a href="#"> Основная страница</a> </li>
+                            <li> <a href="#"> FAQ</a> </li>
+                            <li> <a href="#"> Маркет</a> </li>
+                            <li> <a href="#"> Помощь</a> </li>
+                            <li> <a href="#"> Авторизация</a> </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-6 ">
-                    <h6> Newsletter</h6>
-                    <div className="social">
-                        <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
-                    </div>
-
-                    <p>That's technology limitation of LCD monitors</p>
+                    <h6> TON Market.</h6>
+                    <p>Инновация в мире продажи NFT.</p>
                 </div>
                 </div>
             </div>

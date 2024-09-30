@@ -1,12 +1,13 @@
 import React from "react"
 import Header from "../components/Header"
 import '../styles/faq.css';
+import Footer from "../components/Footer";
 
 
 const FAQ: React.FC = () => {
     return <>
     <Header />
-        <div>
+        <main className="w-100 h-100">
             <h1 style={{ marginTop:'5%',  textAlign:'center'}}>Самые частозадаваем вопросы.</h1>
             <div style={{ marginTop:'2%', marginLeft:'15%', textAlign:'justify', marginRight:'15%'}}>
                 <ul>
@@ -32,7 +33,8 @@ const FAQ: React.FC = () => {
                     </li>
                 </ul>
             </div>
-        </div>
+        </main>
+    <Footer />
     </>
 }
 
