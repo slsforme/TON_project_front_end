@@ -8,7 +8,7 @@ const FAQ: React.FC = () => {
     return <>
     <Header />
         <main className="w-100 h-100">
-            <h1 style={{ marginTop:'5%',  textAlign:'center'}}>Самые частозадаваем вопросы.</h1>
+            <h1 style={{ marginTop:'5%',  textAlign:'center'}}>Самые частозадаваемые вопросы.</h1>
             <div style={{ marginTop:'2%', marginLeft:'15%', textAlign:'justify', marginRight:'15%'}}>
                 <ul>
                     <li><h2>Что такое криптовалюта TON?</h2></li>
