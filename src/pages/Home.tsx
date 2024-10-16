@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import NightImage from '../images/carousel/night-city.jpg';
 import CityImage from '../images/carousel/city-nasdaq.jpg';
 import CryptoImage from '../images/carousel/crypto-site.jpg';
@@ -11,17 +11,43 @@ import Footer from "../components/Footer";
 import { Box, Button, useDisclosure } from "@chakra-ui/react";
 import { ConnectWalletModal } from "../components/ConnectWalletModal";
 import { useSendTransaction } from "../hooks/useSendTransaction";
+import { connector } from "../connector";
+import { isWalletInfoCurrentlyEmbedded, WalletInfo } from "@tonconnect/sdk";
+import { useWallet } from "../hooks/useWallet";
 
 const Home: React.FC = () => {
+    const wallet = useWallet();
+
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const [sendTransaction, confirmationProgress] = useSendTransaction();
 
+    const [walletsList, setWalletsList] = useState<WalletInfo[] | null>(null);
+
+    useEffect(() => {
+        connector.getWallets().then(setWalletsList);
+    }, []);
+
+    const embeddedWallet = useMemo(() => walletsList && walletsList.find(isWalletInfoCurrentlyEmbedded), [walletsList]);
+
+    const onConnectClick = () => {
+        if (embeddedWallet) {
+            connector.connect({jsBridgeKey: embeddedWallet.jsBridgeKey});
+        }
+        onOpen();
+    }
+
+
     return (
         <>
-            <Header onConnect={onOpen} />
+            <Header onConnect={onConnectClick} />
             <ConnectWalletModal isOpen={isOpen} onClose={onClose}/>
-            <Button onClick={sendTransaction} isLoading={confirmationProgress}>Send tx</Button>
+            <Box>
+                {
+                    wallet ? <Button onClick={sendTransaction} isLoading={confirmationProgress}>Send tx</Button>
+                    : <p>No connection yet</p>
+                }
+            </Box>
             <main className="w-100 h-100">
                 <div id="carouselExample" className="carousel slide">
                     <div className="carousel-inner" id="carousel-container">

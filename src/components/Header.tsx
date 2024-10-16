@@ -1,10 +1,11 @@
 import React, { FunctionComponent } from 'react';
 
-import { TonConnectButton, toUserFriendlyAddress } from '@tonconnect/ui-react'
+import { TonConnectButton, toUserFriendlyAddress} from '@tonconnect/ui-react'
 import { NavLink } from 'react-router-dom';
-import { Box, Button, Menu, MenuButton, MenuItem, MenuList, useClipboard } from '@chakra-ui/react';
+import { Box, Button, Menu, MenuButton, MenuItem, MenuList, Spinner, useClipboard } from '@chakra-ui/react';
 import { useWallet } from '../hooks/useWallet';
 import { connector } from '../connector';
+import { useIsConnectionRestored } from '../hooks/useIsConnectionRestored';
 
 
 
@@ -12,8 +13,10 @@ const Header: FunctionComponent<{ onConnect: () => void }> = ({ onConnect }) => 
     
     const wallet = useWallet();
 
+    const isConnectionRestored = useIsConnectionRestored();
+
     const userFriendlyAddress = wallet ? toUserFriendlyAddress(wallet.account.address) : '';
-    const sliceUserFriendlyAddress = userFriendlyAddress.slice(0, 4) + '…' + userFriendlyAddress.slice(-4);
+    const slicedUserFriendlyAddress = userFriendlyAddress.slice(0, 4) + '…' + userFriendlyAddress.slice(-4);
 
     const {onCopy, hasCopied} =  useClipboard(userFriendlyAddress);
 
@@ -29,14 +32,19 @@ const Header: FunctionComponent<{ onConnect: () => void }> = ({ onConnect }) => 
                 </ul>
             </div>
             <Box>
-                {
-                    wallet ? <Menu>
-                        <MenuButton as={Button}>{sliceUserFriendlyAddress}</MenuButton>
-                        <MenuList>
-                            <MenuItem closeOnSelect={false} onClick={onCopy}>{hasCopied ? 'Copied' : 'Copy Address'}</MenuItem>
-                            <MenuItem onClick={() => connector.disconnect()}>Disconnect</MenuItem>
-                        </MenuList>
-                    </Menu> : <Button onClick={onConnect}>Connect Wallet</Button>
+            {
+            wallet ? <Menu>
+                    <MenuButton as={Button}>{slicedUserFriendlyAddress}</MenuButton>
+                    <MenuList>
+                        <MenuItem closeOnSelect={false} onClick={onCopy}>{hasCopied ? 'Copied!' : 'Copy Address'}</MenuItem>
+                        <MenuItem onClick={() => connector.disconnect()}>Disconnect</MenuItem>
+                    </MenuList>
+                </Menu> :
+                <Button w="150px" onClick={onConnect}>
+                    {
+                        isConnectionRestored ? 'Connect Wallet' : <Spinner />
+                    }
+                </Button>
                 }
             </Box>
         </div>
