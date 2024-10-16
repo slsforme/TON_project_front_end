@@ -45,19 +45,18 @@ main{
 }
 
 .custom-import{
-    outline: none; /* Убирает стандартное выделение */
-    border: 2px solid black; /* Задать свою рамку при фокусе */
+    outline: none; 
+    border: 2px solid black; 
     border-radius: 10px;
     padding: 5px;
-    transition: font-size 0.3s ease, color 0.3s ease; /* Плавный переход стилей */
-
+    transition: font-size 0.3s ease, color 0.3s ease; 
 }
 
 .custom-import:focus{
     outline: none;
-    border: 2px solid grey; /* Задать свою рамку при 
-    font-size: 20px; /* Увеличение текста при фокусе */
-    color: #333; /* Плавная смена цвета текста */
+    border: 2px solid grey;  
+    font-size: 20px; 
+    color: #333; 
 }
 
 #black-btn{

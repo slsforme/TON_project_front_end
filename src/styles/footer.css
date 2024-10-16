@@ -5,7 +5,7 @@
 html, body {
     margin: 0; 
     padding: 0;
-    height: 100%; /* Устанавливаем высоту для HTML и body */
+    height: 100%; 
 }
 
 body {
@@ -24,9 +24,9 @@ footer {
     background: #000000; 
     padding: 20px; 
     flex: 0 0 auto;
-    display: flex; /* Устанавливаем флекс-контейнер для футера */
-    flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку */
-    justify-content: space-between; /* Выравнивание элементов по краям */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
 }
 
 footer p, a {
@@ -47,7 +47,7 @@ footer h6 {
     margin-bottom: 40px;
     position: relative;
     font-size: large;
-    flex-basis: 100%; /* Обеспечиваем, чтобы заголовок занимал всю ширину */
+    flex-basis: 100%; 
 }
 
 footer h6:after {
@@ -86,7 +86,7 @@ footer h6:after {
 
 footer ul {
     padding-left: 0;
-    margin: 0; /* Убираем отступы */
+    margin: 0; 
 }
 
 footer ul li {

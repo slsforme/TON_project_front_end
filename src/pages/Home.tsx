@@ -8,11 +8,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import { NavLink } from "react-router-dom";
 import Footer from "../components/Footer";
+import { Box, Button, useDisclosure } from "@chakra-ui/react";
+import { ConnectWalletModal } from "../components/ConnectWalletModal";
+import { useSendTransaction } from "../hooks/useSendTransaction";
 
 const Home: React.FC = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
+    const [sendTransaction, confirmationProgress] = useSendTransaction();
+
     return (
         <>
-            <Header />
+            <Header onConnect={onOpen} />
+            <ConnectWalletModal isOpen={isOpen} onClose={onClose}/>
+            <Button onClick={sendTransaction} isLoading={confirmationProgress}>Send tx</Button>
             <main className="w-100 h-100">
                 <div id="carouselExample" className="carousel slide">
                     <div className="carousel-inner" id="carousel-container">
@@ -71,6 +80,9 @@ const Home: React.FC = () => {
                         </div>
                     </div>
                 </div>
+
+
+            
             </main>
             <Footer />
         </>
